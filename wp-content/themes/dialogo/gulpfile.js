@@ -20,6 +20,7 @@ function css() {
         .pipe(minifyCSS())
         .pipe(rename({suffix: '.min'}))
         .pipe(dest('./css/'))
+        .pipe(browserSync.stream())
 }
 
 function js() {
@@ -30,6 +31,7 @@ function js() {
             suffix: '.min'
         }))
         .pipe(dest('js/'))
+        .pipe(browserSync.stream())
 }
 
 function live() {
@@ -37,8 +39,8 @@ function live() {
         proxy: 'localhost/dialogo-site'
     });
 
-    watch('src/sass/*.sass', css).on('change', browserSync.reload);
-    watch('src/js/*.js', js).on('change', browserSync.reload);
+    watch('src/sass/*.sass', css)
+    watch('src/js/*.js', js)
     watch('layouts/*.php').on('change', browserSync.reload);
     watch('./*.php').on('change', browserSync.reload);
 }

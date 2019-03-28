@@ -1,0 +1,36 @@
+#header-carousel
+    .header-text
+        font-family: $dinpro-bold
+        font-size: 26px
+        font-weight: 800
+        width: 332px
+    a
+        font-size: 24px
+    .img-col
+       /*  padding: 50px 50px */
+    .owl-dots
+        position: absolute
+        top: 50%
+        right: -45px
+        transform: rotateZ(90deg) translateY(-50%)
+    .owl-dot
+        width: 16.73px
+        height: 16.73px
+        background: url('../img/gph-dot.svg') no-repeat
+        transition: all .5 ease
+        &:not(:first-child)
+            margin-left: 30px
+        &:focus
+            outline: none
+    .owl-dot.active
+        background: url('../img/gph-dot-active.svg') no-repeat
+
+#rec-1
+    bottom: -30px
+    left: 32.5%
+    opacity: .82
+#rec-2
+    top: -20px
+    right: -20px
+    opacity: .82
+    z-index: 9

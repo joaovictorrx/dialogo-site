@@ -1,4 +1,29 @@
-$( document ).ready(function() {
+$(document).ready(function () {
+
+    $('#header-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: true,
+        items: 1
+    });
+
+    $("#header-carousel").mousemove(function (e) {
+        parallaxIt(e, "#rec-1", -10);
+        parallaxIt(e, "#rec-2", -10);
+        parallaxIt(e, "#header-carousel img", 5);
+    });
+
+    function parallaxIt(e, target, movement) {
+        var $this = $("#header-carousel");
+        var relX = e.pageX - $this.offset().left;
+        var relY = e.pageY - $this.offset().top;
+
+        TweenMax.to(target, 1, {
+            x: (relX - $this.width() / 2) / $this.width() * movement,
+            y: (relY - $this.height() / 2) / $this.height() * movement
+        });
+    }
 
     $("a.smooth-scroll").on('click', function (event) {
         // Make sure this.hash has a value before overriding default behavior
@@ -18,7 +43,7 @@ $( document ).ready(function() {
         } // End if
     });
 
-    $('input[name="phone"]').mask('(99) 99999-9999');
-    
-    new WOW().init();
+    /* $('input[name="phone"]').mask('(99) 99999-9999'); */
+
+    /* new WOW().init(); */
 })
