@@ -11,7 +11,11 @@ $(document).ready(function () {
     $("#header-carousel").mousemove(function (e) {
         parallaxIt(e, "#rec-1", -10);
         parallaxIt(e, "#rec-2", -10);
-        parallaxIt(e, "#header-carousel img", 5);
+        parallaxIt(e, "#plus", 10);
+        parallaxIt(e, "#plus-lg", 8);
+        parallaxItY(e, "#line-vertical", -25);
+        parallaxItX(e, "#line-horizontal", -20);
+        parallaxIt(e, "#header-carousel .banner-img", 5);
     });
 
     function parallaxIt(e, target, movement) {
@@ -21,7 +25,25 @@ $(document).ready(function () {
 
         TweenMax.to(target, 1, {
             x: (relX - $this.width() / 2) / $this.width() * movement,
-            y: (relY - $this.height() / 2) / $this.height() * movement
+            y: (relY - $this.height() / 2) / $this.height() * movement,
+        });
+    }
+
+    function parallaxItX(e, target, movement) {
+        var $this = $("#header-carousel");
+        var relX = e.pageX - $this.offset().left;
+
+        TweenMax.to(target, 1, {
+            x: (relX - $this.width() / 2) / $this.width() * movement,
+        });
+    }
+
+    function parallaxItY(e, target, movement) {
+        var $this = $("#header-carousel");
+        var relY = e.pageY - $this.offset().top;
+
+        TweenMax.to(target, 1, {
+            y: (relY - $this.height() / 2) / $this.height() * movement,
         });
     }
 
