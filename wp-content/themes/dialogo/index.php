@@ -99,9 +99,9 @@
 	</div>
 </section>
 
-<section id="about" class="py-5 position-relative">
-	<img class="position-absolute bg-about" src="<?php bloginfo('template_url');?>/img/bg-about-recife-antigo.png" alt="">
-	<div class="container">
+<section id="about" class="py-5">
+	<div class="container position-relative">
+		<img class="position-absolute bg-about" src="<?php bloginfo('template_url');?>/img/gph-pernambuco-map.svg" alt="">
 		<div class="row mt-5 mb-4">
 			<div class="col-12 text-center">
 				<h2 class="text-uppercase">quem somos</h2>
@@ -110,19 +110,57 @@
 
 		<div class="row d-flex justify-content-center">
 			<div class="col-8">
-				Uma agência de comunicação online e off-line que trabalha para dar visibilidade a ideias, negócios, pessoas e instituições. Temos DNA pernambucano, e a energia multicultural da nossa terra está em tudo o que fazemos.
-				<br>
-				<br>
-				O diálogo é a forma de comunicação mais rica, pois pressupõe troca, compartilhamento de opiniões, visões e experiências. Assim crescemos e ajudamos o outro a crescer. Esse propósito, aliado a um planejamento estratégico e uma atuação propositiva, tem nos levado a resultados positivos para o cliente.
-				<br>
-				<br>
-				No mercado desde 2002, temos como diretoras executivas as jornalistas Márcia Guenes e Laura Cortizo, ambas com vasta experiência em consultoria e comunicação corporativa e política, além de atuação em veículos de imprensa.
-				<br>
-				<br>
-				Integramos a Associação Brasileira das Agências de Comunicação (Abracom), sendo signatária do Guia de Boas Práticas de Mercado elaborado pela instituição.
+				<div class="about-text">
+					<?php 
+						$post = get_post(9);
+						if( $post ): 
+							setup_postdata( $post );?>
+							<?php the_field('text'); ?>
+							<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
+				</div>
+				<div class="text-center">
+					<button id="btn-read-more" class="btn-read-more text-uppercase btn btn-link">ler mais</button>
+				</div>
 			</div>
 		</div>
 	</div>
+	<section id="services" class="py-5 position-relative">
+		<div class="container">
+			<div class="row mt-5 mb-4">
+				<div class="col-12 text-center">
+					<h2 class="text-uppercase">Serviços</h2>
+				</div>
+			</div>
+
+			<div class="row d-flex justify-content-center">
+				<div class="col-12">
+					<p>
+					<a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+					</p>
+					<div class="row">
+						<div class="col">
+							<div class="collapse multi-collapse" id="multiCollapseExample1">
+							<div class="card card-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+							</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="collapse multi-collapse" id="multiCollapseExample2">
+							<div class="card card-body">
+								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </section>
+
 
 <?php get_footer();?>

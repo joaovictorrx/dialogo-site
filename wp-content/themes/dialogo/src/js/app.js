@@ -65,6 +65,28 @@ $(document).ready(function () {
         } // End if
     });
 
+    $('.about-text p').not(':nth-child(1)').not(':nth-child(2)').each(function(){
+        $(this).hide()
+    })
+
+    $("#btn-read-more").on('click', function (event) {
+        $('.about-text p').not(':nth-child(1)').not(':nth-child(2)').each(function(){
+            $(this).toggleClass('more')
+            
+            if($(this).hasClass('more')){
+                $(this).show('.5s')
+            }else{
+                $(this).hide('.5s')
+            }
+        })
+        
+        $(this).toggleClass('more')
+        if($(this).hasClass('more')){
+            $(this).text('ler menos')
+        }else{
+            $(this).text('ler mais')
+        }
+    });
     /* $('input[name="phone"]').mask('(99) 99999-9999'); */
 
     /* new WOW().init(); */

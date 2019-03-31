@@ -4,31 +4,30 @@ add_theme_support('post-thumbnails');
 /* POST TYPES */
 function register_my_post_types()
 {
-    /* register_post_type('testimonials',
+    register_post_type('about',
     array(
         'labels' => array(
-            'name'          => __('Depoimentos'),
-            'singular_name' => __('Depoimento'),
-            'add_new_item'  => __('Adicionar Novo Depoimento'),
-            'edit_item'     => __('Editar Depoimento'),
+            'name'          => __('Quem Somos'),
+            'singular_name' => __('Quem Somos'),
+            'edit_item'     => __('Editar Quem Somos'),
         ),
         'public'            => true,
-        'menu_icon'         => 'dashicons-format-quote',
-        'supports'          => array('title'),
+        'show_in_menu'      => 'false',
+        'supports'          => array(''),
     ));
     
-    register_post_type('partners',
+    register_post_type('clients',
     array(
         'labels' => array(
-            'name'          => __('Parceiros'),
-            'singular_name' => __('Parceiro'),
-            'add_new_item'  => __('Adicionar Novo Parceiro'),
-            'edit_item'     => __('Editar Parceiro'),
+            'name'          => __('Clientes'),
+            'singular_name' => __('Cliente'),
+            'add_new_item'  => __('Adicionar Novo Cliente'),
+            'edit_item'     => __('Editar Cliente'),
         ),
         'public'            => true,
         'menu_icon'         => 'dashicons-groups',
         'supports'          => array('title'),
-    )); */
+    ));
 } 
 add_action('init', 'register_my_post_types');
 
@@ -49,3 +48,17 @@ function pagination()
     ));
     
 }
+
+function add_custom_menu_position() {
+    
+    add_menu_page('about', 'Quem Somos', 'edit_posts', admin_url('post.php?post=9&action=edit'), null ,'dashicons-info', 25); 
+}
+add_action('admin_menu', 'add_custom_menu_position');
+
+function remove_menu () 
+{
+    remove_menu_page( 'edit.php?post_type=page' );
+    remove_menu_page( 'edit-comments.php' );
+    remove_menu_page('edit.php');
+} 
+add_action('admin_menu', 'remove_menu');
