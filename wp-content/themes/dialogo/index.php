@@ -101,14 +101,18 @@
 
 <section id="about" class="py-5">
 	<div class="container position-relative">
-		<img class="position-absolute bg-about" src="<?php bloginfo('template_url');?>/img/gph-pernambuco-map.svg" alt="">
+		<img id="map" class="position-absolute bg-about" src="<?php bloginfo('template_url');?>/img/gph-pernambuco-map.svg" alt="">
+		<img id="negative-plus" class="position-absolute" src="<?php bloginfo('template_url');?>/img/gph-negative-plus.svg" alt="">
+		<img id="map-horizontal-line" class="position-absolute" src="<?php bloginfo('template_url');?>/img/gph-line-horizontal.svg" alt="">
+		<img id="horizontal-line-sm" class="position-absolute" src="<?php bloginfo('template_url');?>/img/gph-line-horizontal-sm.svg" alt="">
+
 		<div class="row mt-5 mb-4">
 			<div class="col-12 text-center">
 				<h2 class="text-uppercase">quem somos</h2>
 			</div>
 		</div>
 
-		<div class="row d-flex justify-content-center">
+		<div class="row d-flex justify-content-center bg-spacer">
 			<div class="col-8">
 				<div class="about-text">
 					<?php 
@@ -119,8 +123,9 @@
 							<?php wp_reset_postdata(); ?>
 					<?php endif; ?>
 				</div>
-				<div class="text-center">
+				<div class="text-center position-relative">
 					<button id="btn-read-more" class="btn-read-more text-uppercase btn btn-link">ler mais</button>
+					<img id="horizontal-line-xs" class="position-absolute" src="<?php bloginfo('template_url');?>/img/gph-line-horizontal-xs.svg" alt="">
 				</div>
 			</div>
 		</div>

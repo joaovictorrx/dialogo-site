@@ -17,31 +17,39 @@ $(document).ready(function () {
         parallaxItX(e, "#line-horizontal", -20);
         parallaxIt(e, "#header-carousel .banner-img", 5);
     });
-
+    
+    $("#about").mousemove(function (e) {
+        parallaxItX(e, "#map", -20);
+        parallaxIt(e, "#negative-plus", -20);
+        parallaxItX(e, "#map-horizontal-line", 30);
+        parallaxItX(e, "#horizontal-line-sm", 20);
+        parallaxItX(e, "#horizontal-line-xs", -10);
+    });
+    
     function parallaxIt(e, target, movement) {
         var $this = $("#header-carousel");
         var relX = e.pageX - $this.offset().left;
         var relY = e.pageY - $this.offset().top;
-
+    
         TweenMax.to(target, 1, {
             x: (relX - $this.width() / 2) / $this.width() * movement,
             y: (relY - $this.height() / 2) / $this.height() * movement,
         });
     }
-
+    
     function parallaxItX(e, target, movement) {
         var $this = $("#header-carousel");
         var relX = e.pageX - $this.offset().left;
-
+    
         TweenMax.to(target, 1, {
             x: (relX - $this.width() / 2) / $this.width() * movement,
         });
     }
-
+    
     function parallaxItY(e, target, movement) {
         var $this = $("#header-carousel");
         var relY = e.pageY - $this.offset().top;
-
+    
         TweenMax.to(target, 1, {
             y: (relY - $this.height() / 2) / $this.height() * movement,
         });
