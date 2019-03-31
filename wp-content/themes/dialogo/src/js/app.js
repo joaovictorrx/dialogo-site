@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    $('body').scrollspy({ target: '#top-menu-nav', offset: 100 })
     $('#header-carousel').owlCarousel({
         loop: true,
         margin: 10,

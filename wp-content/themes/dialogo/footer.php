@@ -1,5 +1,21 @@
-<footer>
-
+<footer class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 text-center d-flex">
+                <img class="img-fluid align-self-center" src="<?php bloginfo('template_url');?>/img/lg-dialogo-white.png" alt="">
+            </div>
+            <div class="col-4 d-flex">
+                <div class="align-self-center">
+                    <p class="mb-0">Rua do Marechal Rondon, nº 146. Casa Forte, Recife-PE. CEP: 52061-050</p>
+                    <p class="mb-0">Fone: (81) 3426-2263</p>
+                    <p class="mb-0">E-mail: diretoria@faladialogo.com.br</p>
+                </div>
+            </div>
+            <div class="col-5">
+            <?= do_shortcode('[forminator_form id="12"]') ?>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <!-- JQuery -->
