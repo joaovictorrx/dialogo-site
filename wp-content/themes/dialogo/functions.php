@@ -15,6 +15,19 @@ function register_my_post_types()
         'show_in_menu'      => 'false',
         'supports'          => array(''),
     ));
+
+    register_post_type('banners',
+    array(
+        'labels' => array(
+            'name'          => __('Banners'),
+            'singular_name' => __('Banner'),
+            'add_new_item'  => __('Adicionar Novo Banner'),
+            'edit_item'     => __('Editar Banner'),
+        ),
+        'public'            => true,
+        'menu_icon'         => 'dashicons-images-alt',
+        'supports'          => array('title'),
+    ));
     
     register_post_type('clients',
     array(

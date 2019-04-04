@@ -65,7 +65,7 @@
 
 		<div class="row mt-5 mb-4">
 			<div class="col-12 text-center">
-				<h2 class="text-uppercase">quem somos</h2>
+				<h3 class="title text-uppercase">quem somos</h3>
 			</div>
 		</div>
 
@@ -91,14 +91,14 @@
 		<div class="container">
 			<div class="row mt-5 mb-4">
 				<div class="col-12 text-center">
-					<h2 class="text-uppercase">Serviços</h2>
+					<h2 class="title text-uppercase">Serviços</h2>
 				</div>
 			</div>
 
 			<div class="row d-flex justify-content-center">
 				<div class="col-4 text-center">
-					<img src="<?php bloginfo('template_url');?>/img/ic-service.svg" alt="">
-					<p>Consultoria em comunicação</p>
+					<img class="mb-3" src="<?php bloginfo('template_url');?>/img/ic-service.svg" alt="">
+					<div class="title title-sm text-primary mx-auto">Consultoria em comunicação</div>
 				</div>
 				<!-- <div class="col-12">
 					<p>
