@@ -29,6 +29,19 @@ function register_my_post_types()
         'supports'          => array('title'),
     ));
     
+    register_post_type('services',
+    array(
+        'labels' => array(
+            'name'          => __('Serviços'),
+            'singular_name' => __('Serviço'),
+            'add_new_item'  => __('Adicionar Novo Serviço'),
+            'edit_item'     => __('Editar Serviço'),
+        ),
+        'public'            => true,
+        'menu_icon'         => 'dashicons-clipboard',
+        'supports'          => array('title'),
+    ));
+    
     register_post_type('clients',
     array(
         'labels' => array(

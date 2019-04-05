@@ -11,52 +11,34 @@
 				<img id="line-vertical" class="position-absolute" src="<?php bloginfo('template_url');?>/img/gph-line-vertical.svg" alt="">
 				<img id="line-horizontal" class="position-absolute" src="<?php bloginfo('template_url');?>/img/gph-line-horizontal.svg" alt="">
 				<div id="header-carousel" class="owl-carousel owl-theme">
-					<div class="item">
-						<div class="row">
-							<div class="col-4 d-flex">
-								<div class="header-text align-self-center">
-									<h2 class="mb-5">Temos DNA pernambucano, e a energia multicultural da nossa terra está em tudo o que fazemos.</h2>
-									<a class="text-uppercase position-relative" href="#">saiba mais<img class="position-absolute line-horizontal-btn" src="<?php bloginfo('template_url');?>/img/gph-line-horizontal.svg" alt=""></a>
+					<?php 
+						$args = array(
+							'post_type'=> 'banners',
+							'posts_per_page' => 3 );
+						$wp_query = new WP_Query($args);
+					?>
+					<?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+						<div class="item">
+							<div class="row">
+								<div class="col-4 d-flex">
+									<div class="header-text align-self-center">
+										<h2 class="mb-5"><?php the_field('text') ?></h2>
+										<a class="text-uppercase position-relative smooth-scroll" href="#about">saiba mais<img class="position-absolute line-horizontal-btn" src="<?php bloginfo('template_url');?>/img/gph-line-horizontal.svg" alt=""></a>
+									</div>
+								</div>
+								<div class="col-8 pr-5">
+									<img class="ml-auto banner-img" src="<?= get_field('image')['url'] ?>" alt="">
 								</div>
 							</div>
-							<div class="col-8 pr-5">
-								<img class="ml-auto banner-img" src="https://placeimg.com/736/514/arch" alt="">
-							</div>
 						</div>
-					</div>
-					<div class="item">
-						<div class="row">
-							<div class="col-4 d-flex">
-								<div class="header-text align-self-center">
-									<h2 class="mb-5">Temos DNA pernambucano, e a energia multicultural da nossa terra está em tudo o que fazemos.</h2>
-									<a class="text-uppercase position-relative" href="#">saiba mais<img class="position-absolute line-horizontal-btn" src="<?php bloginfo('template_url');?>/img/gph-line-horizontal.svg" alt=""></a>
-								</div>
-							</div>
-							<div class="col-8 pr-5">
-								<img class="ml-auto banner-img" src="https://placeimg.com/736/514/arch" alt="">
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="row">
-							<div class="col-4 d-flex">
-								<div class="header-text align-self-center">
-									<h2 class="mb-5">Temos DNA pernambucano, e a energia multicultural da nossa terra está em tudo o que fazemos.</h2>
-									<a class="text-uppercase position-relative" href="#">saiba mais<img class="position-absolute line-horizontal-btn" src="<?php bloginfo('template_url');?>/img/gph-line-horizontal.svg" alt=""></a>
-								</div>
-							</div>
-							<div class="col-8 pr-5">
-								<img class="ml-auto banner-img" src="https://placeimg.com/736/514/arch" alt="">
-							</div>
-						</div>
-					</div>
+					<?php endwhile; wp_reset_postdata(); endif; ?>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section id="about" class="py-5">
+<section id="about" class="pt-5">
 	<div class="container position-relative">
 		<img id="map" class="position-absolute bg-about" src="<?php bloginfo('template_url');?>/img/gph-pernambuco-map.svg" alt="">
 		<img id="negative-plus" class="position-absolute" src="<?php bloginfo('template_url');?>/img/gph-negative-plus.svg" alt="">
@@ -87,42 +69,33 @@
 			</div>
 		</div>
 	</div>
-	<section id="services" class="py-5 position-relative">
+	
+	<section id="services" class="pt-5 position-relative">
 		<div class="container">
-			<div class="row mt-5 mb-4">
+			<div class="row mt-5 mb-5">
 				<div class="col-12 text-center">
 					<h2 class="title text-uppercase">Serviços</h2>
 				</div>
 			</div>
 
 			<div class="row d-flex justify-content-center">
-				<div class="col-4 text-center">
-					<img class="mb-3" src="<?php bloginfo('template_url');?>/img/ic-service.svg" alt="">
-					<div class="title title-sm text-primary mx-auto">Consultoria em comunicação</div>
-				</div>
-				<!-- <div class="col-12">
-					<p>
-					<a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
-					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
-					</p>
-					<div class="row">
-						<div class="col">
-							<div class="collapse multi-collapse" id="multiCollapseExample1">
-							<div class="card card-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-							</div>
+				<?php 
+					$args = array('post_type'=> 'services' );
+					$wp_query = new WP_Query($args);
+				?>
+				<?php $i = 1; if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+					<div class="col-12 col-lg-4 service-card mb-5 pb-5 text-center">
+						<div class="wrapper-link" data-toggle="collapse" href="#collapse<?= $i ?>" role="button" aria-expanded="false" aria-controls="collapse<?= $i ?>">
+							<img class="mb-3 img-fluid" src="<?= get_field('icon')['url'] ?>" alt="">
+							<div class="wrapper mb-2 text-center mx-auto position-relative">
+								<a data-toggle="collapse" href="#collapse<?= $i ?>" role="button" aria-expanded="false" aria-controls="collapse<?= $i ?>" class="title title-sm text-primary"><?php the_title() ?></a>
 							</div>
 						</div>
-						<div class="col">
-							<div class="collapse multi-collapse" id="multiCollapseExample2">
-							<div class="card card-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-							</div>
-							</div>
+						<div class="wrapper text-center mx-auto collapse" id="collapse<?= $i ?>">
+							<?php the_field('description') ?>
 						</div>
 					</div>
-				</div> -->
+				<?php $i++; endwhile; wp_reset_postdata(); endif; ?>
 			</div>
 		</div>
 	</section>
@@ -131,7 +104,39 @@
 <section id="portifolio">
 </section>
 
-<section id="clients">
+<section id="clients" class="py-5">
+	<div class="container">
+		<div class="row mt-5 mb-4">
+			<div class="col-12 text-center">
+				<h3 class="title text-uppercase">Clientes</h3>
+			</div>
+		</div>
+
+		<div class="row mt-5 mb-4">
+			<div class="col-12 text-center">
+				<div id="clients-carousel" class="owl-carousel owl-theme">
+					<?php 
+						$args = array('post_type'=> 'clients' );
+						$wp_query = new WP_Query($args);
+					?>
+					<?php if ( $wp_query->have_posts() ) : ?>
+					<?php for ($i=1; $i < $wp_query->post_count; $i++): ?>
+						<div class="item mb-2">
+							<div class="d-flex flex-wrap">
+								<?php if($i <= $wp_query->post_count):?>
+									<img class="img-fluid mb-5" src="<?= get_field('image', $wp_query->posts[$i-1]->ID)['url']; ?>" alt="<?= $wp_query->posts[$i-1]->post_title; ?>" title="<?= $wp_query->posts[$i-1]->post_title; ?>">
+								<?php endif;?>
+
+								<?php if(isset($wp_query->posts[$i])):?> 
+									<img class="img-fluid" src="<?= get_field('image', $wp_query->posts[$i]->ID)['url']; ?>" alt="<?= $wp_query->posts[$i]->post_title; ?>" title="<?= $wp_query->posts[$i]->post_title; ?>">
+								<?php endif;?>
+							</div>	
+						</div>
+					<?php $i++; endfor; wp_reset_postdata(); endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <?php get_footer();?>

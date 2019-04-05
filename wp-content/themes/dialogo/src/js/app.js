@@ -3,12 +3,24 @@ $(document).ready(function () {
         target: '#top-menu-nav',
         offset: 100
     })
+    $('#clients-carousel').owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: true,
+        items: 5
+    });
+    
     $('#header-carousel').owlCarousel({
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         autoplay: true,
         autoplayTimeout: 5000,
         autoplayHoverPause: true,
+        mouseDrag: false,
         loop: true,
         margin: 10,
         nav: false,
@@ -101,6 +113,21 @@ $(document).ready(function () {
             $(this).text('ler menos')
         } else {
             $(this).text('ler mais')
+        }
+    });
+
+    $("#services .wrapper-link").on('mouseenter', function (event) {
+        if(!$(this).closest('.service-card').find('.collapse').hasClass('show')){
+            $(this).find('.wrapper').addClass('hover')
+        }
+    });
+    $("#services .wrapper-link").on('mouseleave', function (event) {
+        $(this).find('.wrapper').removeClass('hover')
+    });
+    $("#services .wrapper-link").on('click', function (event) {
+        $(this).find('.wrapper').removeClass('hover')
+        if($(this).closest('.service-card').find('.collapse').hasClass('show')){
+            $(this).find('.wrapper').addClass('hover')
         }
     });
     /* $('input[name="phone"]').mask('(99) 99999-9999'); */

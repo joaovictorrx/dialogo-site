@@ -1,0 +1,16 @@
+#clients-carousel
+    img
+        width: 178px
+        height: 134px
+        object-fit: contain
+    .owl-dot
+        width: 14px
+        height: 14px
+        background: url('../img/gph-dot.svg') no-repeat center / contain
+        transition: all .5 ease
+        &:not(:first-child)
+            margin-left: 30px
+        &:focus
+            outline: none
+    .owl-dot.active
+        background: url('../img/gph-dot-active.svg') no-repeat center / contain
