@@ -41,7 +41,7 @@ function live() {
 
     watch('src/sass/*.sass', css)
     watch('src/js/*.js', js)
-    watch('layouts/*.php').on('change', browserSync.reload);
+    watch('template-part/*.php').on('change', browserSync.reload);
     watch('./*.php').on('change', browserSync.reload);
 }
 

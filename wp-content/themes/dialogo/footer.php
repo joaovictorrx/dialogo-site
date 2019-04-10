@@ -1,18 +1,22 @@
-<footer class="py-5">
+<footer id="contact" class="py-5 px-2">
     <div class="container">
-        <div class="row">
-            <div class="col-3 text-center d-flex">
+        <div class="row justify-content-between">
+            <div class="col-12 col-lg-3 order-2 order-lg-0 text-center d-flex justify-content-between">
                 <img class="img-fluid align-self-center" src="<?php bloginfo('template_url');?>/img/lg-dialogo-white.png" alt="">
+                <div class="d-flex d-lg-none align-self-end mb-2">
+                    <a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center mr-3" href="https://instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center" href="https://facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </div>
             </div>
-            <div class="col-4 d-flex">
+            <div class="col-12 col-lg-4 order-0 order-lg-1 mb-3 d-flex">
                 <div class="align-self-center">
                     <p class="mb-0">Rua do Marechal Rondon, nº 146. Casa Forte, Recife-PE. CEP: 52061-050</p>
                     <p class="mb-0">Fone: (81) 3426-2263</p>
                     <p class="mb-0">E-mail: diretoria@faladialogo.com.br</p>
                 </div>
             </div>
-            <div class="col-5">
-            <?= do_shortcode('[forminator_form id="12"]') ?>
+            <div class="col-12 col-lg-4 order-1 order-lg-2 mb-5">
+                <?= do_shortcode('[forminator_form id="12"]') ?>
             </div>
         </div>
     </div>

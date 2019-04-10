@@ -10,14 +10,7 @@
         width: 332px
     a
         font-size: 24px
-        text-decoration: none
-    .img-col
-       /*  padding: 50px 50px */
-    .owl-dots
-        position: absolute
-        top: 50%
-        right: -45px
-        transform: rotateZ(90deg) translateY(-50%)
+        text-decoration: none    
     .owl-dot
         width: 16.73px
         height: 16.73px
@@ -61,3 +54,21 @@
 .line-horizontal-btn
     bottom: -5px
     width: 218px !important
+
+@media (min-width: 1024px)
+    #header-carousel
+        .owl-dots
+            position: absolute
+            top: 50%
+            right: -45px
+            transform: rotateZ(90deg) translateY(-50%)
+
+@media (max-width: 1023px)
+    #header-carousel
+        .banner-img
+            height: 300px
+        h2
+            font-size: 22px
+        .owl-dots
+            text-align: center
+            margin-top: 20px

@@ -18,7 +18,34 @@
             width: 20px
             border-left: 2px solid $grey
             border-bottom: 2px solid $grey
+            animation: slide-bottom-45 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both
     .wrapper-link .wrapper:nth-child(2).hover
         &:after
             opacity: 1
             bottom: -20px
+    .collapse.show
+        &:after
+            transition: all .3s ease
+            content: ''
+            opacity: 1
+            position: absolute
+            bottom: 15px
+            left: 50%
+            transform: translateX(-50%) rotateZ(135deg)
+            height: 20px
+            width: 20px
+            border-left: 2px solid $grey
+            border-bottom: 2px solid $grey
+            animation: slide-bottom-135 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both
+
+@keyframes slide-bottom-45
+  0%
+    transform: translateY(0) translateX(-50%) rotateZ(-45deg)
+  100%
+    transform: translateY(10px) translateX(-50%) rotateZ(-45deg)
+
+@keyframes slide-bottom-135
+  0%
+    transform: translateY(0) translateX(-50%) rotateZ(135deg)
+  100%
+    transform: translateY(10px) translateX(-50%) rotateZ(135deg)
