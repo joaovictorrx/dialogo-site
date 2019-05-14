@@ -1,10 +1,14 @@
 # Dialogo Site
 
-Site em desenvolvimento para a empresa Dialogo.
+Site desenvolvido para a empresa Dialogo.
 
 ## Built With
 
 * [Wordpress](https://wordpress.org/) - The CMS used
+
+## Published at
+
+* [faladialogo.com.br](https://faladialogo.com.br)
 
 ## Authors
 
