@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title><?php bloginfo('name'); ?></title>
+
+	<!--[if IE]><link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/favico.png"><![endif]-->
+	<link rel="icon" href="<?php bloginfo('template_url'); ?>/img/favico.png">
 	
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,10 +38,10 @@
 			<div class="collapse navbar-collapse flex-column" id="navigation-bar">
 				<ul class="navbar-nav ml-auto mb-3 d-none d-lg-flex">
 					<li class="nav-item mr-2">
-						<a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center" href="https://instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+						<a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center" target="_blank" href="https://www.instagram.com/dialogocomunicacao/"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center" href="https://facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i> </a>
+						<a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center" target="_blank" href="https://www.facebook.com/DialogoComunicacaoIntegrada/"><i class="fa fa-facebook" aria-hidden="true"></i> </a>
 					</li>
 				</ul>
 				<ul class="navbar-nav ml-auto flex-lg-row menu-row">

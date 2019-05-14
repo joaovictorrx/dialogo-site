@@ -4,8 +4,8 @@
             <div class="col-12 col-lg-3 order-2 order-lg-0 text-center d-flex justify-content-between">
                 <img class="img-fluid align-self-center" src="<?php bloginfo('template_url');?>/img/lg-dialogo-white.png" alt="">
                 <div class="d-flex d-lg-none align-self-end mb-2">
-                    <a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center mr-3" href="https://instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center" href="https://facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center mr-3" target="_blank" href="https://www.instagram.com/dialogocomunicacao/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a class="nav-link btn-social rounded-circle bg-light-grey text-white text-center" target="_blank" href="https://www.facebook.com/DialogoComunicacaoIntegrada/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </div>
             </div>
             <div class="col-12 col-lg-4 order-0 order-lg-1 mb-3 d-flex">

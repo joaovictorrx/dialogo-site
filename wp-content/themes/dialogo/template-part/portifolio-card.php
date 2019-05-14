@@ -5,7 +5,7 @@
             <div class="w-100 text-center">
                 <h5 class="card-title title mb-0"><?php the_title() ?></h5>
                 <p class="card-text">(<?php the_field('subtitle') ?>)</p>
-                <a target="_blank" href="<?php the_field('link') ?>" class="card-text stretched-link"><?php the_field('link') ?></a>
+                <a target="_blank" href="<?php the_field('link') ?>" class="card-text stretched-link">Saiba Mais</a>
             </div>
         </div>
     </div>

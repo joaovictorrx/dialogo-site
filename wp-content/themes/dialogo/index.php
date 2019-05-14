@@ -38,7 +38,8 @@
 	</div>
 </section>
 
-<section id="about" class="pt-lg-5">
+<section id="about" class="pt-lg-5 position-relative">
+	<div class="about-bg"></div>
 	<div class="container position-relative">
 		<img id="map" class="position-absolute bg-about d-none d-lg-block" src="<?php bloginfo('template_url');?>/img/gph-pernambuco-map.svg" alt="">
 		<img id="negative-plus" class="position-absolute d-none d-lg-block" src="<?php bloginfo('template_url');?>/img/gph-negative-plus.svg" alt="">
@@ -92,7 +93,9 @@
 							</div>
 						</div>
 						<div class="wrapper text-center mx-auto collapse" id="collapse<?= $i ?>">
-							<?php the_field('description') ?>
+							<a data-toggle="collapse" href="#collapse<?= $i ?>" role="button" aria-expanded="false" aria-controls="collapse<?= $i ?>" class="service-description stretched-link">
+								<?php the_field('description') ?>
+							</a>
 						</div>
 					</div>
 				<?php $i++; endwhile; wp_reset_postdata(); endif; ?>
