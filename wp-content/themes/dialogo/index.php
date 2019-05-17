@@ -92,7 +92,7 @@
 								<a data-toggle="collapse" href="#collapse<?= $i ?>" role="button" aria-expanded="false" aria-controls="collapse<?= $i ?>" class="title title-sm text-primary"><?php the_title() ?></a>
 							</div>
 						</div>
-						<div class="wrapper text-center mx-auto collapse" id="collapse<?= $i ?>">
+						<div class="wrapper text-left mx-auto collapse" id="collapse<?= $i ?>">
 							<a data-toggle="collapse" href="#collapse<?= $i ?>" role="button" aria-expanded="false" aria-controls="collapse<?= $i ?>" class="service-description stretched-link">
 								<?php the_field('description') ?>
 							</a>

@@ -134,7 +134,7 @@ $(document).ready(function () {
 
         $(this).toggleClass('more')
         if ($(this).hasClass('more')) {
-            $(this).text('ler menos')
+            $(this).text('minimizar texto')
         } else {
             $(this).text('ler mais')
         }
